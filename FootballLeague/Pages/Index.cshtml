@@ -31,8 +31,10 @@ ViewData["Title"] = "Home page";
         for (var m in parsedResult) {
             var objMatch = parsedResult[m];
             let p = document.createElement('match-result');
-            p.setAttribute("team1", objMatch.score.fullTime.home);
-            p.setAttribute("team2", objMatch.score.fullTime.away);
+            p.setAttribute("homeTeamScore", objMatch.score.fullTime.home);
+            p.setAttribute("awayTeamScore", objMatch.score.fullTime.away);
+            p.setAttribute("homeTeamImage", objMatch.homeTeam.crest);
+            p.setAttribute("awayTeamImage", objMatch.awayTeam.crest);
             p.setAttribute("imgSrc", objMatch.competition.emblem);
             parent.appendChild(p);
         }
